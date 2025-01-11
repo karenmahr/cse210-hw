@@ -92,19 +92,28 @@ class Program
                 numbers.Add(userNumber);
             } 
 
-                int total = Number.Sum();
-                Console.WriteLine($"The sum is: {total}.");
+                int sum = 0;
+                foreach (int number in numbers)
+                {
+                    sum += number;
+                }
 
-                int Average = Number.Average()
-                Console.WriteLine($"The average is: {Average}.")
+                Console.WriteLine($"The sum is: {sum}.");
 
-                int Largest = Number.Largest()
-                Console.WriteLine($"The largest number is: {Largest}.")
+                float average = ((float)sum) / numbers.Count;
+                Console.WriteLine($"The average is: {average}.");
 
-                int Smallest = Number.smallest
-                Console.WriteLine($"The smallest positive number is: {Smallest}.")
+                int max = numbers[0]
+                  foreach (int number in numbers)
+                {
+                    if (number > max)
+                    {
+                        // if this number is greater than the max, we have found the new max!
+                        max = number;
+                    }
+                }
+                Console.WriteLine($"The largest number is: {max}.");
 
-                sorted list
         }
     }  
 }
