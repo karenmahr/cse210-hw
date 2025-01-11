@@ -77,11 +77,10 @@ class Program
             }
         }
         //Exercise 4
-            List <int> Number = new List <int> ();
-            int userNumber =-1;   
-            while (NumberEnter != 0)
-            {
-
+        List <int> Number = new List <int> ();
+        int userNumber =-1;   
+        while (NumberEnter != 0)
+        {
             NumberEnter = Console.WriteLine("Enter number: ");
             
             string userResponse = Console.ReadLine();
@@ -91,29 +90,68 @@ class Program
             {
                 numbers.Add(userNumber);
             } 
+            
+            int sum = 0;
+            foreach (int number in numbers)
+            {
+                 sum += number;
+            }
 
-                int sum = 0;
-                foreach (int number in numbers)
+            Console.WriteLine($"The sum is: {sum}.");
+
+            float average = ((float)sum) / numbers.Count;
+            Console.WriteLine($"The average is: {average}.");
+
+            int max = numbers[0]
+            foreach (int number in numbers)
+            {
+                if (number > max)
                 {
-                    sum += number;
+                    max = number;
                 }
-
-                Console.WriteLine($"The sum is: {sum}.");
-
-                float average = ((float)sum) / numbers.Count;
-                Console.WriteLine($"The average is: {average}.");
-
-                int max = numbers[0]
-                  foreach (int number in numbers)
-                {
-                    if (number > max)
-                    {
-                        // if this number is greater than the max, we have found the new max!
-                        max = number;
-                    }
-                }
-                Console.WriteLine($"The largest number is: {max}.");
-
+            }
+            Console.WriteLine($"The largest number is: {max}.");
         }
-    }  
+         //Exercise 5
+        DisplayWelcomeMessage();
+
+        string userName = PromptUserName();
+        int userNumber = PromptUserNumber();
+
+        int squaredNumber = SquareNumber(userNumber);
+
+        DisplayResult(userName, squaredNumber);
+        }
+
+        static void DisplayWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the program!");
+        }
+
+        static string PromptUserName()
+        {
+            Console.Write("Please enter your name: ");
+            string name = Console.ReadLine();
+
+            return name;
+        }
+
+        static int PromptUserNumber()
+        {
+            Console.Write("Please enter your favorite number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            return number;
+        }
+        static int SquareNumber(int number)
+        {
+              int square = number * number;
+              return square;
+        }
+
+        static void DisplayResult(string name, int square)
+        {
+            Console.WriteLine($"{name}, the square of your number is {square}");
+        }
 }
+     
