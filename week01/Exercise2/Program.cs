@@ -4,27 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Exercise2 Project.");
-    }
-     Consol.Write ("What is your grade percentage? ")
+        Console.Write("What is your grade percentage? ");
         string answer = Console.ReadLine();
-        int GradePercentage = int.Parse(answer);
+        int percent = int.Parse(answer);
 
         string letter = "";
 
-        if (GradePercentage >= 90)
+        if (percent >= 90)
         {
             letter = "A";
         }
-        else if (GradePercentage >= 80 && GradePercentage <90)
+        else if (percent >= 80)
         {
             letter = "B";
         }
-        else if (GradePercentage >= 70 && GradePercentage <80)
+        else if (percent >= 70)
         {
             letter = "C";
         }
-        else if (GradePercentage >= 60 && GradePercentage <70)
+        else if (percent >= 60)
         {
             letter = "D";
         }
@@ -33,14 +31,15 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"Your grade is: {letter}")
-
-        if (GradePercentage >=70)
+        Console.WriteLine($"Your grade is: {letter}");
+        
+        if (percent >= 70)
         {
-            Console.WriteLine("Congratulations, you approved the course!")
+            Console.WriteLine("You passed!");
         }
         else
         {
-            Console.WriteLine("Better luck next time")
+            Console.WriteLine("Better luck next time!");
         }
+    }
 }
