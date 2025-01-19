@@ -7,9 +7,9 @@ public class PromptGenerator
 
     public void InitializePrompts()
     {
-        _prompts.Add("What made you smile today?");
-        _prompts.Add("Describe a challenge you faced and overcame.");
-        _prompts.Add("What are you grateful for today?");
+        _prompts.Add("What made you laugh today?");
+        _prompts.Add("Describe a challenge you faced and how you overcame it.");
+        _prompts.Add("Name something you are grateful for today");
         _prompts.Add("Write about a goal you want to achieve.");
     }
 
