@@ -1,4 +1,11 @@
 public class Word{
     private string _text;
-    //_isHidden : bool
-}
+    private bool _isHidden;
+
+    //behavior
+    //Hide() : void
+    //Show() : void
+    //IsHidden() : bool
+    //GetDisplayText() : string
+
+}//only having access to the list
