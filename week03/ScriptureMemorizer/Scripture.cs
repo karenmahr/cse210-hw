@@ -1,31 +1,32 @@
 using System.Net.Quic;
 
 public class Scripture{
-    _reference = Reference; //hace conexion con reference
+    _reference = Reference; 
     private List<Word> _words = new List<Word>();
-    //1word==_ and go like that
-    //behaviors. The "display text" refers to the text with some words shown normally, and some replaced by underscores.
-    public string Scripture()
+    
+    public string Scripture(string reference, string text)
     {
-        _reference = ("Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+        _reference = ("John 3:16");
+        _text =("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
 
     }
     public string HideRandomWords()
     {
         Random random = new Random();
-        int index = random.Next(_numberToHide.Count);
-        return _numberToHide[void]; //return underscore
+        int index = random.Next(_words.Count);
+        return _words[index]; 
     }
-    public void GetDisplayText()
+    public string GetDisplayText()
     {
-        Console.WriteLine{};
-        return;
+       //esto es lo que tiene que ver el usuario cuando apreta enter
     }
-      
-    //IsCompletelyHidden() : bool
+
+    public bool IsCompletelyHidden ();
+    {
+        if _reference == false
+        {
+            end program;
+}
+    }
 
 }
-//for each word in this text, word will be called
-//review step 5
-//step 7 explains what a boolean is
-// la escritura en si esta en scripture
