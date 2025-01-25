@@ -30,3 +30,12 @@ public class Scripture{
     }
 
 }
+
+{
+        Console.WriteLine("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
+        Console.ReadLine();
+
+        Console.Clear();
+
+        Console.WriteLine("___ ___ __ _____ ___ _____ ____ __ ____ ___ ____ ________ ___ ____ _________ _________ __ ___ ______ ___ ______ ___ ____ ___________ ____ ");
+    }
