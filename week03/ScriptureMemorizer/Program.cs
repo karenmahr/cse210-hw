@@ -4,22 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
+        string _reference= "John 3:16";
+        string _words = "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.";
+        string _userInput ="";
+
+        Console.WriteLine ($"{_reference} {_words}");
         Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
 
-        //if
-        Console.WriteLine("Proverbs 3:5-6 Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.");
-        Console.ReadLine();
+        _userInput = Console.ReadLine();
 
-// This will clear the console
-        Console.Clear();
-
-// This will show "BBB" in the console where "AAA" used to be
-        Console.WriteLine("___");
-
-        //else if end program
+        if (string.IsNullOrEmpty(_userInput))
+        {
+            Console.Clear();
+            Console.WriteLine("{reference} {GetDisplayText}");
+        }
         
+        else
+        {
+            Environment.Exit(0);
+        }
     }
-//if user input==quit
 
 }
