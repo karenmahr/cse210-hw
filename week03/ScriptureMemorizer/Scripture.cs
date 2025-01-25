@@ -1,20 +1,28 @@
 using System.Net.Quic;
 
 public class Scripture{
-    _reference = Reference; 
+ 
+    private Reference _reference;
     private List<Word> _words = new List<Word>();
     
-    public string Scripture(string reference, string text)
-    {
-        _reference = ("John 3:16");
-        _text =("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
 
-    }
-    public string HideRandomWords()
+    public Scripture(Reference _reference, string _text)
     {
-        Random random = new Random();
-        int index = random.Next(_words.Count);
-        return _words[index]; 
+        _reference = reference;
+        _words = text.Split("").Select(Word=>new Word(word)).ToList();
+    }
+    Reference reference = new Reference("John", 3, 16); 
+    Scripture scripture = new Scripture(text, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
+    public string HideRandomWords(int numberToHide)
+    {
+        Random randomGenerator = new Random();
+        string result = "";
+
+        for (int i=0; i< numberToHide; i++)
+        {
+            int randomIndex=randomGenerator.Next(_words.Count);
+        }
+        return result;
     }
     public string GetDisplayText()
     {
