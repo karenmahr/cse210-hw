@@ -28,16 +28,8 @@ public class Word{
         }
         else
         {
-            new string("_",_text.Length);
-            return new string
+            new string($"{"_"} {_text.Length}");
         }
     }
 
-    
-    //behavior
-    //Hide() : void
-    //Show() : void
-    //IsHidden() : bool
-    //GetDisplayText() : string
-
-}//only having access to the list
+}
