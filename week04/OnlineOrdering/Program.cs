@@ -1,3 +1,5 @@
+//The object's state is translated to variables called attributes or member variables
+//The object's behaviors are translated to functions called methods.
 using System;
 
 class Program
