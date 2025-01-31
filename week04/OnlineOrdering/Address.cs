@@ -4,18 +4,30 @@
 
 class Address
 {
-    private string _streetaddress;
+    private string _streetAddress;
     private string _city;
     private string _state;
     private string _country;
 
-    private string Location()
+    public Address(string street, string city, string state, string country)
     {
-        return _country;
+        _streetAddress = street;
+        _city = city;
+        _state = state;
+        _country = country;
     }
 
+    public bool IsInUSA()
+    {
+        return _country == "USA";
+    }
     private string CompleteAddress()
     {
-        return $"{_streetaddress}, {_city}, {_state}, {_country}";
+        return $"{_streetAddress}, {_city}, {_state}, {_country}";
     }
+    public string GetFullAddress()
+    {
+        return CompleteAddress();
+    }
+    
 }

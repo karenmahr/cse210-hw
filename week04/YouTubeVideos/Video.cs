@@ -14,6 +14,8 @@ class Video
  public int _length;
  public List<Comment>_comments;
  public List<Video>_videos;
+
+ //display
     
  foreach (string Video in _videos)
  {

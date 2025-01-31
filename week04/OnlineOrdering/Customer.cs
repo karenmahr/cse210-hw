@@ -4,12 +4,22 @@
 class Customer
 {
     private string _name;
-    private class _address;
+    private Address _address;
 
-    //getter
-    private string Location()
+    public Customer(string name, Address address)
     {
-        return _country;
+        _name = name;
+        _address = address;
+    }    
+
+    public string GetName()
+    {
+        return _name;
     }
+    public bool IsInUSA()
+    {
+        return _address.IsInUSA();
+    }
+
 }
         

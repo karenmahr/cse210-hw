@@ -1,5 +1,46 @@
-//ATTRIBUTE: Contains a list of products and a customer. Can calculate the total cost of the order. Can return a string for the packing label. Can return a string for the shipping label.
-//METHOD: The total price is calculated as the sum of the total cost of each product plus a one-time shipping cost. Conectarlo con el metodo en address (Get/setter?)
-//METHOD: This company is based in the USA. If the customer lives in the USA, then the shipping cost is $5. If the customer does not live in the USA, then the shipping cost is $35.
-//METHOD: A LIST? A packing label should list the name and product id of each product in the order.
-//METHOD: A LIST? A shipping label should list the name and address of the customer
+using System.Collections.Generic;
+class Order
+{
+    private List<string> product;
+    private string _customer;
+    public Order(string customer)
+    {
+        _customer = customer;
+        product = new List<string> { "milk", "bread", "eggs", "cheese", "tomato", "onion" };
+    }
+    public bool IsInUSA(Address address)
+    {
+        return address.IsInUSA();
+    }
+    public int ShippingCost(Address address)  
+    {   
+        int shippingCost;
+        {
+            if (address.IsInUSA())
+            {
+                shippingCost = 5;
+            }
+            else
+            {
+                shippingCost = 35;
+            }
+            return shippingCost;
+        }
+    }    
+        private int TotalFinalCost (int TotalCost, int ShippingCost) 
+        {
+            return TotalCost + ShippingCost;
+        }
+
+        private string PackingLabel(string _name, int _id)
+        {
+            return $"Name: {_name} Product ID: {_id}";
+        }
+
+        private string ShippingLabel(string _name, string CompleteAddress)
+        {
+            return $"Name: {_name} Complete Address: {CompleteAddress}";
+        }
+    
+} 
+
