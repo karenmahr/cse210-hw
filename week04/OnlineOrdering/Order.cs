@@ -1,22 +1,27 @@
 using System.Collections.Generic;
 class Order
 {
-    private List<string> product;
-    private string _customer;
-    public Order(string customer)
+    private List<Product> _products;
+    private Customer _customer;
+    public Order(Customer customer)
     {
         _customer = customer;
-        product = new List<string> { "milk", "bread", "eggs", "cheese", "tomato", "onion" };
+        _products = new List<Product>();
     }
+
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+    }    
     public bool IsInUSA(Address address)
     {
         return address.IsInUSA();
     }
-    public int ShippingCost(Address address)  
+    private int ShippingCost()  
     {   
         int shippingCost;
         {
-            if (address.IsInUSA())
+            if (_customer.IsInUSA())
             {
                 shippingCost = 5;
             }
@@ -27,19 +32,42 @@ class Order
             return shippingCost;
         }
     }    
-        private int TotalFinalCost (int TotalCost, int ShippingCost) 
+    private int TotalFinalCost()
+    {
+        int totalCost = 0;
+        foreach (var product in _products)
         {
-            return TotalCost + ShippingCost;
+            totalCost += product.GetTotalCost();
+        }
+        return totalCost + ShippingCost();
+    }
+
+        public int GetTotalFinalCost()
+        {
+            return TotalFinalCost();
         }
 
-        private string PackingLabel(string _name, int _id)
+    private string PackingLabel()
+    {
+        string label = "Packing Label:";
+        foreach (var product in _products)
         {
-            return $"Name: {_name} Product ID: {_id}";
+            label += $"{product.GetName()} (ID: {product.GetId()})";
+        }
+        return label;
+    }
+        public string GetPackingLabel()
+        {
+            return PackingLabel();
         }
 
-        private string ShippingLabel(string _name, string CompleteAddress)
+    private string ShippingLabel()
+    {
+        return $"Shipping Label: Name: {_customer.GetName()} {_customer.GetFullAddress()}";
+    }
+        public string GetShippingLabel()
         {
-            return $"Name: {_name} Complete Address: {CompleteAddress}";
+            return ShippingLabel();
         }
     
 } 

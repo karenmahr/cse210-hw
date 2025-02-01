@@ -1,6 +1,3 @@
-//ATRIBUTE: Contains the name, product id, price, and quantity of each product. 
-//METHOD: The total cthe price per unit and the quantity. (If the price per unit was $3 and they bought 5 of them, the product total cost would be $15.)
-//THIS IS THE EASIESTS CLASSost of this product is computed by multiplying 
 using System.Reflection.Metadata.Ecma335;
 
 class Product
@@ -23,12 +20,10 @@ class Product
     {
         return TotalCost;
     }
-
-    public int GetPrice()
+    public string GetName()
     {
-        return TotalCost;
+        return _name;
     }    
-
     public int GetId()
     {
         return _id;
