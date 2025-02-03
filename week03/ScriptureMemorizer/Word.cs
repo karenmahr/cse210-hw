@@ -15,11 +15,12 @@ public class Word{
     public Word (string text)
     {
         _text = text;
+        _isHidden = false;        
     }
 
-    public bool Hide()
+    public void Hide()
     {
-        return _isHidden;
+        _isHidden=true;
     }    
     public void SetHide(bool value)
     {
@@ -44,17 +45,15 @@ public class Word{
         _isHidden = value;
     }
 
-    private string GetDisplayText()
+    public string GetDisplayText()
     { 
-        if (_isHidden == false)
+        if (_isHidden)
         {
-            return _text;
+            return new string($"{"_"} {_text.Length}");
         }
         else
         {
-            new string($"{"_"} {_text.Length}");
+            return _text;
         }
-        return GetDisplayText();
     }
-
-}
+}   

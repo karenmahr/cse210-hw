@@ -16,36 +16,47 @@ public class Scripture
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        _words = new List<Word>();        
+        _words = new List<Word>();   
+        foreach (var word in text.Split(' '))
+        {
+            _words.Add(new Word(word));
+        }     
     }
     private void HideRandomWords(int numberToHide)
     {
         Random randomGenerator = new Random();
-        for (int i = 0; i < numberToHide; i++)
+        int hiddenCount = 0;        
+
+        while (hiddenCount < numberToHide)
         {
             int randomIndex = randomGenerator.Next(_words.Count);
-            if (_words[randomIndex].IsHidden) // Hide only visible words
+            if (!_words[randomIndex].IsHidden())
             {
                 _words[randomIndex].Hide();
+                hiddenCount++;
             }
         }
     }
     private string GetDisplayText()
     {
-        return $"{_reference} {_words}";
-       //esto es lo que tiene que ver el usuario cuando apreta enter
+        List<string> displayWords = new List<string>();
+        foreach (var word in _words)
+        {
+            displayWords.Add(word.GetDisplayText());
+        }
+        return $"{_reference.GetDisplayText()} {string.Join(" ", displayWords)}";
     }
 
     private bool IsCompletelyHidden()
     {
         foreach (var word in _words)
         {
-            if (wordtext == true)
+            if (!word.IsHidden())
             {
-                Environment.Exit(0); 
+                return false;
             }
         }
-        return IsCompletelyHidden();
+        return true;
     }
 
 }
