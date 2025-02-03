@@ -1,3 +1,13 @@
+//ATTRIBUTE _book:string
+//ATTRIBUTE _chapter:int
+//ATTRIBUTE _verse:int
+//ATTRIBUTE_endVerse_:int
+
+//CONSTRUCTOR book:string, chapter:int, verse:int
+//CONSTRUCTOR book:string, chapter:int, startverse:int, endVerse_:int
+
+//METHOD: GetDisplayText():string
+
 public class Reference 
 {
     private string _book;

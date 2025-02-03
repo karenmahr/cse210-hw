@@ -1,25 +1,49 @@
+//ATTRIBUTE: _text string
+//ATTRIBUTE: _isHidden bool
+
+//CONSTRUCTOR: text: string
+
+//METHOD Hide():void
+//METHOD Show():void
+//METHOD IsHidden():bool
+//GetDisplayText():string
+
 public class Word{
     private string _text;
     private bool _isHidden;
 
-    public Word (string text, string IsHidden)
+    public Word (string text)
     {
-        _isHidden = false;
         _text = text;
     }
- 
-    private void Hide()
+
+    public bool Hide()
     {
-        _isHidden = true;
+        return _isHidden;
+    }    
+    public void SetHide(bool value)
+    {
+        _isHidden = value;
     }
     private void Show()
     {
         _isHidden = false;
     }
-    private bool IsHidden()
+    public void GetShow()
+    {
+        Show();
+    }
+
+    public bool IsHidden()
     {
         return _isHidden;
+    }    
+
+    public void SetIsHidden(bool value)
+    {
+        _isHidden = value;
     }
+
     private string GetDisplayText()
     { 
         if (_isHidden == false)
@@ -30,6 +54,7 @@ public class Word{
         {
             new string($"{"_"} {_text.Length}");
         }
+        return GetDisplayText();
     }
 
 }
