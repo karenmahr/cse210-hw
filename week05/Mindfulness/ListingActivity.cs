@@ -21,10 +21,11 @@ public class ListingActivity : Activity
     }
 
     private void Run()
-    {
-        Console.WriteLine (ShowSpinner());       
-        Console.WriteLine ("List as many responses you can to the following prompt");
-        Console.WriteLine ($"You may begin in {ShowCountDown}");
+    {      
+        Console.WriteLine ("List as many responses you can to the following prompt:");
+        Console.WriteLine ($"You may begin in");
+        //Console.WriteLine ($"You may begin in {ShowCountDown}");  
+        Console.WriteLine ($"You listed {_prompts.Count} items!");      
     }
     public void InitializeRandomPropmt()
     {
@@ -34,7 +35,7 @@ public class ListingActivity : Activity
         _prompts.Add("When have you felt the Holy Ghost this month?");
         _prompts.Add("Who are some of your personal heroes?");
     }
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
         Random random = new Random();
         int index = random.Next(_prompts.Count);
@@ -43,9 +44,10 @@ public class ListingActivity : Activity
 
     public List <string> GetListFromUser()
     {
-    return List <string>;
+        return _prompts;
     }
-
-    Console.WriteLine(_prompts.Count);
-    Console.WriteLine "You listed {} items"
+    public void CountList()
+    {
+        Console.WriteLine(_prompts.Count);
+    }
 }

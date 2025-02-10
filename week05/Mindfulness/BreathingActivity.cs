@@ -12,10 +12,13 @@ public class BreathingActivity : Activity
     }
     private void Run()
     { 
-        Console.WriteLine ("How long, in seconds, would you like for your session?");
-        Console.WriteLine ("Get ready...");  
-        Console.WriteLine ($"{ShowSpinner()}"); 
-        Console.WriteLine ($"Breathe in...{ShowCountDown()}");       
-        Console.WriteLine ($"Breathe out...{ShowCountDown()}");          
+        Console.WriteLine ($"Breathe in...");       
+        Console.WriteLine ($"Breathe out...");          
+        //Console.WriteLine ($"Breathe in...{ShowCountDown()}");       
+        //Console.WriteLine ($"Breathe out...{ShowCountDown()}");         
     }
+    public void GetRun()
+    {
+        Console.WriteLine ($"{Run()}");
+    }    
 }

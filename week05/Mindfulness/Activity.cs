@@ -21,10 +21,17 @@ public class Activity
         _duration = duration;
     }
 
-    private void DisplayStartingMessage(string name, string description)
+    private void DisplayStartingMessage()
     {
-        Console.WriteLine ($"Welcome to the {name}.");
-        Console.WriteLine ($"{description}");
+        Console.WriteLine ($"Welcome to the {_name}.");
+        Console.WriteLine ($"{_description}");
+        Console.WriteLine ("How long, in seconds, would you like for your session?");
+        Console.WriteLine  ("Get ready...");
+        //Console.WriteLine ($"{ShowSpinner()}");         
+    }
+    public void GetDisplayStartingMessage()
+    {
+        Console.WriteLine ($"{DisplayStartingMessage}");
     }
     public string GetName()
     {
@@ -41,7 +48,12 @@ public class Activity
     private void DisplayEndingMessage()
     {
         Console.Write ("Well done!!"); 
-        Console.Write ($"You have completed another {_duration} seconds of the Breathing Activity");
+        Console.Write ($"You have completed another {_duration} seconds of the {_name}");
+    }
+
+    public void GetDisplayEndingMessage()
+    {
+        Console.WriteLine ($"{DisplayEndingMessage}");
     }
     public void ShowSpinner()
     {

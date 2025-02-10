@@ -24,13 +24,13 @@ public class ReflectingActivity : Activity
 
     private void Run()
     {
-        Console.WriteLine ("This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");     
-        Console.WriteLine ("How long, in seconds, would you like for your session?"); 
-        Console.WriteLine ("Get ready...");
-        Console.WriteLine (ShowSpinner());           
         Console.WriteLine ("Consider the following prompt: ");   
+        Console.WriteLine ($"{DisplayPrompt}");
+        Console.WriteLine ("When you have something in mind, press enter to continue.");
+        Console.WriteLine ("Now ponder on each of the following questions as they related to this experience. Yo may begin in: ");
+        Console.WriteLine ($"{DisplayQuestions}");
     }
-    public void InitializeRandomPropmtReflecting()
+    public void InitializeRandomPropmt()
     {
         _prompts.Add("Think of a time when you stood up for someone else.");
         _prompts.Add("Think of a time when you did something really difficult.");
@@ -38,7 +38,7 @@ public class ReflectingActivity : Activity
         _prompts.Add("When have you felt the Holy Ghost this month?");
         _prompts.Add("Think of a time when you did something truly selfless.");
     }
-    public string GetRandomPromptReflecting()
+    public string GetRandomPrompt()
     {
         Random random = new Random();
         int index = random.Next(_prompts.Count);
@@ -46,7 +46,7 @@ public class ReflectingActivity : Activity
     }    
     private void DisplayPrompt()
     {
-        Console.WriteLine (GetRandomPromptReflecting());
+        Console.WriteLine (GetRandomPrompt());
     }   
 
     public void InitializeRandomQuestion()
