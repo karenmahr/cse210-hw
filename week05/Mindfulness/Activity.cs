@@ -14,43 +14,37 @@ public class Activity
     private string _description;
     private int _duration;
 
-    public Activity (string name, string description)
+    public Activity (string name, string description, int duration)
     {
         _name = name;
         _description = description;
         _duration = duration;
     }
 
-    private void DisplayStartingMessage()
+    private void DisplayStartingMessage(string name, string description)
     {
-        Console.WriteLine "Menu Options:"
-
-        Console.WriteLine "1. Start breathing activity"  
-        Console.WriteLine "2. Start reflecting activity"  
-        Console.WriteLine "3. Start listing activity"  
-        Console.WriteLine "4. Quit"                        
-
-        Console.WriteLine "Select a choice from the menu: "  
+        Console.WriteLine ($"Welcome to the {name}.");
+        Console.WriteLine ($"{description}");
     }
-    private string GetName()
+    public string GetName()
     {
         return _name;
     }    
-    private string GetDescription()
+    public string GetDescription()
     {
         return _description;
     }
-    private int GetDuration()
+    public int GetDuration()
     {
-        Console.WriteLine "How long, in seconds, would you like for your session?"
         return _duration;
     }
     private void DisplayEndingMessage()
     {
-        Console.Write "Well done!!" 
-        Console.Write $"You have completed another {duration} seconds of the Breathing Activity";
+        Console.Write ("Well done!!"); 
+        Console.Write ($"You have completed another {_duration} seconds of the Breathing Activity");
     }
-    private void ShowSpinner()
+    public void ShowSpinner()
+    {
      List <string> animationStrings = new List<string>();
      animationStrings.Add("|");
      animationStrings.Add("/");
@@ -60,19 +54,20 @@ public class Activity
      animationStrings.Add("/");
      animationStrings.Add("-");
      animationStrings.Add("\\");
-
+    
     foreach (string s in animationStrings)
     {
         Console.Write(s);
         Thread.Sleep(1000);
         Console.Write("\b \b");
     }
-
+    }
     private void ShowCountDown()
+    {
     List <int> countDown = new List<int>();
-    countDown.Add("3");
-    countDown.Add("2");
-    countDown.Add("1");
+    countDown.Add(3);
+    countDown.Add(2);
+    countDown.Add(1);
 
     foreach (int c in countDown)
     {
@@ -80,6 +75,7 @@ public class Activity
         Thread.Sleep(1000);
         Console.Write("\b \b");
     } 
+    }
 
     //DateTime startTime = DateTime.Now;
     //DateTime endTime = startTime.AddSeconds(10);
