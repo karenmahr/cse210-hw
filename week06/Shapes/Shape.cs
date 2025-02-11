@@ -1,8 +1,13 @@
 using System.Drawing;
 
-public class Shape
+public abstract class Shape
 {
     private string _color;
+
+    public Shape(string color)
+    {
+        _color=color;
+    }
     public string GetColor()
     {
         return _color;
@@ -11,12 +16,5 @@ public class Shape
     {
         _color = color;
     }
-    public Shape(string color)
-    {
-        color = "blue";
-    }
-    public virtual double GetArea()
-    {
-        return area;
-    }
+    public abstract double GetArea();
 }

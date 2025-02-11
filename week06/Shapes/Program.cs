@@ -1,22 +1,28 @@
 using System;
+using System.ComponentModel;
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<Shape> shape=new List<Shape>();
+        List<Shape> shapes=new List<Shape>();
 
-        shape.add(new Square());
-        shape.add(new Rectangle());
-        shape.add(new Circle());   
+        Square s1=new Square("red", 1);
+        shapes.Add(s1);
 
-        foreach(Shape shape in shape)
+        Rectangle s2=new Rectangle("Blue", 2, 3);
+        shapes.Add(s2);
+
+        Circle s3=new Circle("Green", 6);
+        shapes.Add(s2);        
+
+
+        foreach(Shape s in shapes)
         {
-            string color = shape.GetColor();
-            Console.WriteLine(color);
-            
-            float double area=shape.GetArea();
-            Console.WriteLine(area);
+            string color = s.GetColor();
+            double area=s.GetArea();
+
+            Console.WriteLine($"The {color} shape has an area of {area}.");
         }     
     }
 }

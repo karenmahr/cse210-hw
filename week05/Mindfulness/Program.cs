@@ -20,7 +20,7 @@ public class Program
 
             if (selectedOption == 1)
             {
-                BreathingActivity a1=new BreathingActivity("Breathing Activity", "Description", 5);
+                BreathingActivity a1=new BreathingActivity("Breathing Activity", "Description", 5);//ACA VA EL INPUT QUE EL USUARIO PONE
                 Console.WriteLine ($"{a1.DisplayStartingMessage}");
                 a1.Run();
                 Console.WriteLine($"{a1.DisplayEndingMessage}");      
